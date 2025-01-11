@@ -6,7 +6,7 @@ var adUnits = [
         code: 'div-gpt-ad-300x250',
         mediaTypes: {
             banner: {
-                sizes: [[300, 250], [320, 50]] // Mobile sizes
+                sizes: [[300, 250], [320, 50]]
             }
         },
         bids: [
@@ -18,7 +18,7 @@ var adUnits = [
         code: 'div-gpt-ad-728x90',
         mediaTypes: {
             banner: {
-                sizes: [[728, 90]] // Desktop size
+                sizes: [[728, 90]]
             }
         },
         bids: [
@@ -50,7 +50,7 @@ googletag.cmd.push(function() {
     googletag.enableServices();
 });
 
-// Request bids from Prebid.js and set targeting for GPT
+// Request bids from Prebid.js 
 pbjs.que.push(function() {
     pbjs.requestBids({
         bidsBackHandler: function() {
