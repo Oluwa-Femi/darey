@@ -1,0 +1,3 @@
+[submodule "prebid"]
+	path = prebid
+	url = https://github.com/prebid/Prebid.js.git
