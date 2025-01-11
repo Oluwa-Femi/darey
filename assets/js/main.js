@@ -1,7 +1,6 @@
 var pbjs = pbjs || {};
 pbjs.que = pbjs.que || [];
 
-// Define Ad Units
 var adUnits = [
     {
         code: 'div-gpt-ad-300x250',
@@ -11,12 +10,8 @@ var adUnits = [
             }
         },
         bids: [
-            {
-                bidder: 'appnexus',
-                params: {
-                    placementId: '12345678' // Replace with your actual AppNexus placement ID
-                }
-            }
+            { bidder: 'appnexus', params: { placementId: '13144370' } },
+            { bidder: 'rubicon', params: { accountId: '14062', siteId: '70608', zoneId: '498816' } }
         ]
     },
     {
@@ -27,15 +22,11 @@ var adUnits = [
             }
         },
         bids: [
-            {
-                bidder: 'appnexus',
-                params: {
-                    placementId: '87654321' // Replace with another AppNexus placement ID
-                }
-            }
+            { bidder: 'openx', params: { unit: '539439964', delDomain: 'se-demo-d.openx.net' } }
         ]
     }
 ];
+
 
 pbjs.que.push(function() {
     pbjs.addAdUnits(adUnits);
@@ -118,8 +109,18 @@ pbjs.que.push(function() {
     });
 });
 
-// analytics adapter -- still not working yet, need to debug
+// analytics adapter 
 pbjs.enableAnalytics({
     provider: 'ga',
     options: { trackerName: 'prebid' }
+});
+
+// print log to terminal
+pbjs.setConfig({
+    debug: true
+});
+
+// event listener to monitor bid response
+pbjs.onEvent('bidResponse', function(bid) {
+    console.log('Bid Response:', bid);
 });
