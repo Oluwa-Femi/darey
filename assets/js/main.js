@@ -37,12 +37,13 @@ var adUnits = [
     }
 ];
 
-// Initialize Prebid.js
 pbjs.que.push(function() {
     pbjs.addAdUnits(adUnits);
+
     pbjs.requestBids({
         bidsBackHandler: function() {
             pbjs.setTargetingForGPTAsync();
+            googletag.pubads().refresh();
         }
     });
 });
@@ -50,8 +51,10 @@ pbjs.que.push(function() {
 // Request and Render Bids - Load the Google Publisher Tag (GPT) library
 window.googletag = window.googletag || { cmd: [] };
 googletag.cmd.push(function() {
-    googletag.defineSlot('/1234567/example_ad_unit', [[300, 250]], 'div-gpt-ad-300x250').addService(googletag.pubads());
-    googletag.defineSlot('/1234567/example_ad_unit', [[728, 90]], 'div-gpt-ad-728x90').addService(googletag.pubads());
+    googletag.defineSlot('/1234567/example_ad_unit', [[300, 250]], 'div-gpt-ad-300x250')
+        .addService(googletag.pubads());
+    googletag.defineSlot('/1234567/example_ad_unit', [[728, 90]], 'div-gpt-ad-728x90')
+        .addService(googletag.pubads());
     googletag.pubads().enableSingleRequest();
     googletag.enableServices();
 });
