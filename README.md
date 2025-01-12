@@ -5,6 +5,8 @@
 ## Building a Simplified Header Bidding System
 Implement a header bidding solution for a publisher's site to optimize ad revenue. This project demonstrates a simplified **header bidding system** using **Prebid.js** and **Google Publisher Tags (GPT)** to optimize ad revenue for publishers. The system supports multiple Supply-Side Platforms (SSPs), lazy loading, bid validation, and dynamic floor pricing.
 
+## Live Demo
+Check out the live version here: [Live Header Bidding Demo](https://superlative-duckanoo-7354c0.netlify.app/)
 
 ## Features
 - **Prebid.js Integration**: Enables real-time bidding from multiple SSPs.
