@@ -1,6 +1,10 @@
 var pbjs = pbjs || {};
 pbjs.que = pbjs.que || [];
 
+
+// ib.adnxs.com (AppNexus/Xandr).
+// se-demo-d.openx.net (OpenX).
+// rubiconproject.com (Rubicon).
 var adUnits = [
   {
     code: "div-gpt-ad-300x250",
