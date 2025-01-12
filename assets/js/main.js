@@ -1,7 +1,6 @@
 var pbjs = pbjs || {};
 pbjs.que = pbjs.que || [];
 
-
 // ib.adnxs.com (AppNexus/Xandr).
 // se-demo-d.openx.net (OpenX).
 // rubiconproject.com (Rubicon).
@@ -10,9 +9,7 @@ var adUnits = [
     code: "div-gpt-ad-300x250",
     mediaTypes: {
       banner: {
-        sizes: [
-          [300, 250]
-        ],
+        sizes: [[300, 250]],
       },
     },
     bids: [
@@ -27,7 +24,7 @@ var adUnits = [
     code: "div-gpt-ad-728x90",
     mediaTypes: {
       banner: {
-        sizes: [[728, 90]]
+        sizes: [[728, 90]],
       },
     },
     bids: [
@@ -42,6 +39,20 @@ var adUnits = [
           },
         },
       },
+      {
+        bidder: "aol",
+        params: {
+          placement: "3675026",
+          network: "9599.1",
+        },
+      },
+      {
+        bidder: 'indexExchange',
+        params: {
+            id: '1',
+            siteID: 999990
+       }
+    },
     ],
   },
 ];
@@ -99,10 +110,10 @@ pbjs.que.push(function () {
 // });
 
 pbjs.setConfig({
-    floors: {
-      data: [] // No floor pricing for testing
-    }
-  });
+  floors: {
+    data: [], // No floor pricing for testing
+  },
+});
 
 // lazy loading
 const observer = new IntersectionObserver((entries) => {
