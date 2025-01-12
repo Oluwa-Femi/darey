@@ -39,20 +39,20 @@ var adUnits = [
           },
         },
       },
-      {
-        bidder: "aol",
-        params: {
-          placement: "3675026",
-          network: "9599.1",
-        },
-      },
-      {
-        bidder: 'indexExchange',
-        params: {
-            id: '1',
-            siteID: 999990
-       }
-    },
+    //   {
+    //     bidder: "aol",
+    //     params: {
+    //       placement: "3675026",
+    //       network: "9599.1",
+    //     },
+    //   },
+    //   {
+    //     bidder: 'indexExchange',
+    //     params: {
+    //         id: '1',
+    //         siteID: 999990
+    //    }
+    // },
     ],
   },
 ];
@@ -99,19 +99,13 @@ pbjs.que.push(function () {
   });
 });
 
-//dynamic floor pricing
-// pbjs.setConfig({
-//   floors: {
-//     data: [
-//       { size: [300, 250], floor: 0.5, device: "mobile" },
-//       { size: [728, 90], floor: 1.0, device: "desktop" },
-//     ],
-//   },
-// });
-
+// dynamic floor pricing
 pbjs.setConfig({
   floors: {
-    data: [], // No floor pricing for testing
+    data: [
+      { size: [300, 250], floor: 0.5, device: "mobile" },
+      { size: [728, 90], floor: 1.0, device: "desktop" },
+    ],
   },
 });
 
@@ -153,10 +147,10 @@ pbjs.que.push(function () {
 });
 
 // analytics adapter
-// pbjs.enableAnalytics({
-//     provider: 'ga',
-//     options: { trackerName: 'prebid' }
-// });
+pbjs.enableAnalytics({
+    provider: 'ga',
+    options: { trackerName: 'prebid' }
+});
 
 // print log to terminal
 pbjs.setConfig({
